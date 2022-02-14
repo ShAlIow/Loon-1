@@ -1,4 +1,4 @@
-### subscription-url=https://miaoz.xyz/api/v1/client/subscribe?token=411cc256588e50b4309c01cca225338f
+### subscription-url=
 port: 7890
 socks-port: 7891
 allow-lan: true
@@ -99,104 +99,34 @@ rule-providers:
     path: ./RuleSet/China.yaml
     interval: 86400
 proxies:
-  - {name: 香港 HGC|CM-A|Media, server: cma.miaoz.xyz, port: 21002, type: vmess, uuid: 96a3df3a-bb12-4670-b8ba-b8f035ff00dd, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.bing.com}}, udp: true}
-  - {name: 香港 HGC|CM-B|Media, server: cmb.miaoz.xyz, port: 21002, type: vmess, uuid: 96a3df3a-bb12-4670-b8ba-b8f035ff00dd, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.bing.com}}, udp: true}
-  - {name: 香港 HKT|CM-A|Media, server: cma.miaoz.xyz, port: 21003, type: vmess, uuid: 96a3df3a-bb12-4670-b8ba-b8f035ff00dd, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.bing.com}}, udp: true}
-  - {name: 香港 HKT|CM-B|Media, server: cmb.miaoz.xyz, port: 21003, type: vmess, uuid: 96a3df3a-bb12-4670-b8ba-b8f035ff00dd, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.bing.com}}, udp: true}
-  - {name: 香港 PCCW|CM-A, server: cma.miaoz.xyz, port: 21000, type: vmess, uuid: 96a3df3a-bb12-4670-b8ba-b8f035ff00dd, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.bing.com}}, udp: true}
-  - {name: 香港 PCCW|CM-B, server: cmb.miaoz.xyz, port: 21000, type: vmess, uuid: 96a3df3a-bb12-4670-b8ba-b8f035ff00dd, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.bing.com}}, udp: true}
-  - {name: 香港 GCP|CM-A, server: cma.miaoz.xyz, port: 21022, type: vmess, uuid: 96a3df3a-bb12-4670-b8ba-b8f035ff00dd, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.bing.com}}, udp: true}
-  - {name: 香港 GCP|CM-B, server: cmb.miaoz.xyz, port: 21022, type: vmess, uuid: 96a3df3a-bb12-4670-b8ba-b8f035ff00dd, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.bing.com}}, udp: true}
-  - {name: 台湾 HiNet|CM-A|Media, server: cma.miaoz.xyz, port: 52027, type: vmess, uuid: 96a3df3a-bb12-4670-b8ba-b8f035ff00dd, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.bing.com}}, udp: true}
-  - {name: 台湾 HiNet|CM-B|Media, server: cmb.miaoz.xyz, port: 52027, type: vmess, uuid: 96a3df3a-bb12-4670-b8ba-b8f035ff00dd, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.bing.com}}, udp: true}
-  - {name: 新加坡 DO|CM-A|Media, server: cma.miaoz.xyz, port: 21004, type: vmess, uuid: 96a3df3a-bb12-4670-b8ba-b8f035ff00dd, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.bing.com}}, udp: true}
-  - {name: 新加坡 DO|CM-B|Media, server: cmb.miaoz.xyz, port: 21004, type: vmess, uuid: 96a3df3a-bb12-4670-b8ba-b8f035ff00dd, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.bing.com}}, udp: true}
-  - {name: 日本 NTT|CU|Media, server: cua.miaoz.xyz, port: 21344, type: vmess, uuid: 96a3df3a-bb12-4670-b8ba-b8f035ff00dd, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.bing.com}}, udp: true}
-  - {name: 美国 CN2|CU|Media, server: cua.miaoz.xyz, port: 21020, type: vmess, uuid: 96a3df3a-bb12-4670-b8ba-b8f035ff00dd, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.bing.com}}, udp: true}
-  - {name: 俄罗斯 JustHost|CU, server: cua.miaoz.xyz, port: 21021, type: vmess, uuid: 96a3df3a-bb12-4670-b8ba-b8f035ff00dd, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: www.bing.com}}, udp: true}
+
 proxy-groups:
   - name:  节点选择
     type: select
     proxies:
       -  自动筛选
       - DIRECT
-      - 香港 HGC|CM-A|Media
-      - 香港 HGC|CM-B|Media
-      - 香港 HKT|CM-A|Media
-      - 香港 HKT|CM-B|Media
-      - 香港 PCCW|CM-A
-      - 香港 PCCW|CM-B
-      - 香港 GCP|CM-A
-      - 香港 GCP|CM-B
-      - 台湾 HiNet|CM-A|Media
-      - 台湾 HiNet|CM-B|Media
-      - 新加坡 DO|CM-A|Media
-      - 新加坡 DO|CM-B|Media
-      - 日本 NTT|CU|Media
-      - 美国 CN2|CU|Media
-      - 俄罗斯 JustHost|CU
+     
   - name:  自动筛选
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - 香港 HGC|CM-A|Media
-      - 香港 HGC|CM-B|Media
-      - 香港 HKT|CM-A|Media
-      - 香港 HKT|CM-B|Media
-      - 香港 PCCW|CM-A
-      - 香港 PCCW|CM-B
-      - 香港 GCP|CM-A
-      - 香港 GCP|CM-B
-      - 台湾 HiNet|CM-A|Media
-      - 台湾 HiNet|CM-B|Media
-      - 新加坡 DO|CM-A|Media
-      - 新加坡 DO|CM-B|Media
-      - 日本 NTT|CU|Media
-      - 美国 CN2|CU|Media
-      - 俄罗斯 JustHost|CU
+    
   - name:  国外媒体
     type: select
     proxies:
       -  节点选择
       -  自动筛选
       -  DIRECT
-      - 香港 HGC|CM-A|Media
-      - 香港 HGC|CM-B|Media
-      - 香港 HKT|CM-A|Media
-      - 香港 HKT|CM-B|Media
-      - 香港 PCCW|CM-A
-      - 香港 PCCW|CM-B
-      - 香港 GCP|CM-A
-      - 香港 GCP|CM-B
-      - 台湾 HiNet|CM-A|Media
-      - 台湾 HiNet|CM-B|Media
-      - 新加坡 DO|CM-A|Media
-      - 新加坡 DO|CM-B|Media
-      - 日本 NTT|CU|Media
-      - 美国 CN2|CU|Media
-      - 俄罗斯 JustHost|CU
+     
   - name:  港台番剧
     type: select
     proxies:
       -  节点选择
       -  自动筛选
       -  DIRECT
-      - 香港 HGC|CM-A|Media
-      - 香港 HGC|CM-B|Media
-      - 香港 HKT|CM-A|Media
-      - 香港 HKT|CM-B|Media
-      - 香港 PCCW|CM-A
-      - 香港 PCCW|CM-B
-      - 香港 GCP|CM-A
-      - 香港 GCP|CM-B
-      - 台湾 HiNet|CM-A|Media
-      - 台湾 HiNet|CM-B|Media
-      - 新加坡 DO|CM-A|Media
-      - 新加坡 DO|CM-B|Media
-      - 日本 NTT|CU|Media
-      - 美国 CN2|CU|Media
-      - 俄罗斯 JustHost|CU
+     
   - name:  全局拦截
     type: select
     proxies:
@@ -207,39 +137,11 @@ proxy-groups:
     proxies:
       -  节点选择
       -  DIRECT
-      - 香港 HGC|CM-A|Media
-      - 香港 HGC|CM-B|Media
-      - 香港 HKT|CM-A|Media
-      - 香港 HKT|CM-B|Media
-      - 香港 PCCW|CM-A
-      - 香港 PCCW|CM-B
-      - 香港 GCP|CM-A
-      - 香港 GCP|CM-B
-      - 台湾 HiNet|CM-A|Media
-      - 台湾 HiNet|CM-B|Media
-      - 新加坡 DO|CM-A|Media
-      - 新加坡 DO|CM-B|Media
-      - 日本 NTT|CU|Media
-      - 美国 CN2|CU|Media
-      - 俄罗斯 JustHost|CU
+     
   - name:  漏网之鱼
     type: select
     proxies:
       -  节点选择
       -  DIRECT
       -  自动筛选
-      - 香港 HGC|CM-A|Media
-      - 香港 HGC|CM-B|Media
-      - 香港 HKT|CM-A|Media
-      - 香港 HKT|CM-B|Media
-      - 香港 PCCW|CM-A
-      - 香港 PCCW|CM-B
-      - 香港 GCP|CM-A
-      - 香港 GCP|CM-B
-      - 台湾 HiNet|CM-A|Media
-      - 台湾 HiNet|CM-B|Media
-      - 新加坡 DO|CM-A|Media
-      - 新加坡 DO|CM-B|Media
-      - 日本 NTT|CU|Media
-      - 美国 CN2|CU|Media
-      - 俄罗斯 JustHost|CU
+    
