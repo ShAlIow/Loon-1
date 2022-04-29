@@ -1,5 +1,5 @@
-# Loon 什锦配置
-从Tartarus2014大佬的懒人配置进行的魔改，
+# Loon Config
+
 本配置纯粹自用。
 
 
