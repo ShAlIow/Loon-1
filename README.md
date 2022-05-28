@@ -3,7 +3,7 @@
 本配置纯粹自用。
 
 Loon 插件仓库，提供一键式安装 Loon 插件。
-Loon 用户安装* [插件]([https://github.com/Koolson/Qure](https://raw.githubusercontent.com/Peng-YM/Loon-Gallery/master/loon-gallery.plugin))访问网址: https://🎈.com 即可进入。
+Loon 用户安装 [插件]([https://github.com/Koolson/Qure](https://raw.githubusercontent.com/Peng-YM/Loon-Gallery/master/loon-gallery.plugin) 访问网址: https://🎈.com 即可进入。
 
 
 
