@@ -12,13 +12,13 @@
 
 [Script]
 # dlc xxx (DeepL 译至中)
-http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlc(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js, tag=DeepLtoChinese
+http-request ^https:\/\/duckduckgo.com\/\?q=dlc(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js, tag=DeepLtoChinese
 
 # dle xxx (DeepL 译至英)
-http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dle(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js, tag=DeepLtoEnglish
+http-request ^https:\/\/duckduckgo.com\/\?q=dle(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js, tag=DeepLtoEnglish
 
 # dlj xxx (DeepL 译至日)
-http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlj(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js, tag=DeepLtoJapanese
+http-request ^https:\/\/duckduckgo.com\/\?q=dlj(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js, tag=DeepLtoJapanese
 
 [URL Rewrite]
 # wiki xxx (Wikipedia)
