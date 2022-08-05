@@ -139,6 +139,9 @@ http-request ^https:\/\/duckduckgo.com\/\?q=dlj(\+|%20)([^&]+).+ requires-body=1
 # ddg xxx (还原 DuckDuckGo)
 ^https:\/\/duckduckgo.com\/\?q=ddg(\+|%20)([^&]+).+ https://duckduckgo.com/?ia=about&q=$2 302
 
+# ios xxx (Apple Store应用搜索)
+^https:\/\/duckduckgo.com\/\?q=ios\+([^&]+).+ https://www.qimai.cn/search/index/search/$1 302
+
 # ccn (App Store网页版 临时切换至中国区) 感谢 @mieqq
 ^https:\/\/duckduckgo.com\/\?q=ccn&.+ https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143465&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=cn&urlDesc= 302
 
