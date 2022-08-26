@@ -2,7 +2,7 @@
 #!desc=微博轻享版（原国际版）去广告
 #!author=Coldvvater
 #!homepage=https://github.com/Coldvvater/Loon
-#!icon
+#!icon=https://raw.githubusercontent.com/Coldvvater/Loon/master/IMG/WeiboLite.png
 # 原作者@ddgksf2013（Cuttlefish）https://github.com/ddgksf2013
 
 [URL Rewrite]
