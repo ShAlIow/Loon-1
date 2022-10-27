@@ -1,0 +1,13 @@
+#!name=YouTube去广告
+#!desc=用于删除 瀑布流、视频、搜索中出现的广告和Shorts内的视频广告
+#!author=Coldvvater
+#!homepage=https://github.com/Coldvvater/Loon
+#!icon=https://raw.githubusercontent.com/Coldvvater/Loon/master/IMG/YouTube.png
+# 广告信息可能有遗漏，可能偶现广告
+# inspired by @Choler & @DivineEngine & @app2smile
+
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence) script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.js, requires-body=true, binary-body-mode=true, timeout=10, tag=youtube-proto
+http-response ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube-fake.js, requires-body=false, tag=youtube-fake
+
+[MITM]
+hostname = *.googlevideo.com, youtubei.googleapis.com
