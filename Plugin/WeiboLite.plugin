@@ -3,25 +3,31 @@
 #!author=Coldvvater
 #!homepage=https://github.com/Coldvvater/Loon
 #!icon=https://raw.githubusercontent.com/Coldvvater/Loon/master/IMG/WeiboLite.png
-# 原作者@ddgksf2013（Cuttlefish）https://github.com/ddgksf2013
+# 原作者@ddgksf2013（Cuttlefish）https://gitlab.com/ddgksf2013
 
 [URL Rewrite]
-# ～ WeiboLite_微博国际版_sdkad
-^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php - reject
-# ～ WeiboLite_微博国际版_屏蔽search_suggest
+^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=hot_search_users - reject-dict
+# ～ WeiboLite_微博国际版_热推荐@ddgksf2013
+^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/ad\/weibointl\? - reject-dict
+# ～ WeiboLite_微博国际版_sdkad@ddgksf2013
+^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php  - reject-dict
+# ～ WeiboLite_微博国际版_屏蔽search_suggest@ddgksf2013 
 ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/page\/get_search_suggest - reject-dict
-# ～ WeiboLite_微博国际版_屏蔽searching_info
-^ttps?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*user&a=get_searching_info - reject
-# ～ WeiboLite_微博国际版_屏蔽search_topic
-^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*feed&a=search_topic - reject
-# ～ WeiboLite_微博国际版_屏蔽开屏广告
-^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*ads - reject
+# ～ WeiboLite_微博国际版_屏蔽searching_info@ddgksf2013
+# 此处有待改善，请求的URL的文字直接填充在了搜索框，删除响应无效
+^ttps?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*user&a=get_searching_info - reject-dict
+# ～ WeiboLite_微博国际版_屏蔽search_topic@ddgksf2013 
+^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*feed&a=search_topic - reject-dict
+# ～ WeiboLite_微博国际版_屏蔽开屏广告@ddgksf2013 
+^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*ads - reject-dict
+# ～ WeiboLite_微博国际版_主页推荐tab|热门tab去广告@ddgksf2013
+
 
 [Script]
-http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses\/unread_hot_timeline requires-body=1,script-path=https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/weibo_json.js,tag=微博国际版_推荐tab|热门tab去广告
-http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses\/friends_timeline requires-body=1,script-path=https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/weibo_json.js,tag=微博国际版_关注tab去广告
-http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/cardlist requires-body=1,script-path=https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/weibo_json.js,tag=微博国际版_趋势tab
-http-response ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*feed&a=trends requires-body=1,script-path=https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/weibo_json.js,tag=微博国际版_趋势tab去广告
+http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses\/unread_hot_timeline requires-body=1,script-path=https://gitlab.com/ddgksf2013/Cuttlefish/-/raw/master/Script/weibo_json.js,tag=微博国际版_推荐tab|热门tab去广告
+http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses\/friends_timeline requires-body=1,script-path=https://gitlab.com/ddgksf2013/Cuttlefish/-/raw/master/Script/weibo_json.js,tag=微博国际版_关注tab去广告
+http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/cardlist requires-body=1,script-path=https://gitlab.com/ddgksf2013/Cuttlefish/-/raw/master/Script/weibo_json.js,tag=微博国际版_趋势tab
+http-response ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*feed&a=trends requires-body=1,script-path=https://gitlab.com/ddgksf2013/Cuttlefish/-/raw/master/Script/weibo_json.js,tag=微博国际版_趋势tab去广告
 
 [MITM]
 hostname = *api.weibo*,sdkapp.uve.weibo.com
